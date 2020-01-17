@@ -11,6 +11,11 @@ public class FizzBuzzWhizz {
         int buzzDivider = 5;
         int whizzDivider = 7;
         String result = EMPTY_STRING;
+        String numStr = String.valueOf(number);
+
+        if (numStr.contains("3")) {
+            return FIZZ;
+        }
 
         if (number % fizzDivider == 0) {
             result += FIZZ;
@@ -23,12 +28,7 @@ public class FizzBuzzWhizz {
         if (number % whizzDivider == 0) {
             result += WHIZZ;
         }
-
         if (EMPTY_STRING.equals(result)) {
-            String numStr = String.valueOf(number);
-            if (numStr.contains("3")) {
-                return FIZZ;
-            }
             return String.valueOf(number);
         }
 
