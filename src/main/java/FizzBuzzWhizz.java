@@ -1,12 +1,20 @@
 public class FizzBuzzWhizz {
 
+    private static String FIZZ = "Fizz";
+    private static String BUZZ = "Buzz";
+    private static String WHIZZ = "Whizz";
+
     public String compute(int number) {
-        if (number % 3 == 0) {
-            return "Fizz";
-        } else if (number % 5 == 0) {
-            return "Buzz";
-        } else if (number % 7 == 0) {
-            return "Whizz";
+        int fizzDivider = 3;
+        int buzzDivider = 5;
+        int whizzDivider = 7;
+
+        if (number % fizzDivider == 0) {
+            return FIZZ;
+        } else if (number % buzzDivider == 0) {
+            return BUZZ;
+        } else if (number % whizzDivider == 0) {
+            return WHIZZ;
         }
         return String.valueOf(number);
     }
