@@ -68,4 +68,10 @@ public class FizzBuzzTest {
         String result = fizzBuzzWhizz.compute(30);
         assert result.equals("Fizz");
     }
+
+    @Test
+    public void should_return_fizz_when_it_call_75() {
+        String result = fizzBuzzWhizz.compute(75);
+        assert result.equals("Fizz");
+    }
 }
