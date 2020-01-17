@@ -8,14 +8,20 @@ public class FizzBuzzWhizz {
         int fizzDivider = 3;
         int buzzDivider = 5;
         int whizzDivider = 7;
+        String result = "";
 
         if (number % fizzDivider == 0) {
-            return FIZZ;
-        } else if (number % buzzDivider == 0) {
-            return BUZZ;
-        } else if (number % whizzDivider == 0) {
-            return WHIZZ;
+            result += FIZZ;
         }
-        return String.valueOf(number);
+        if (number % buzzDivider == 0) {
+            result += BUZZ;
+        }
+        if (number % whizzDivider == 0) {
+            result += WHIZZ;
+        }
+        if (result.equals("")) {
+            return String.valueOf(number);
+        }
+        return result;
     }
 }

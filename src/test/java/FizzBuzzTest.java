@@ -11,26 +11,50 @@ public class FizzBuzzTest {
     }
 
     @Test
-    public void should_return_fizz_when_it_could_be_divided_by_three() {
+    public void should_return_fizz_when_it_call_3() {
         String result = fizzBuzzWhizz.compute(3);
         assert result.equals("Fizz");
     }
 
     @Test
-    public void should_return_buzz_when_it_could_be_divided_by_five() {
+    public void should_return_buzz_when_it_call_5() {
         String result = fizzBuzzWhizz.compute(5);
         assert result.equals("Buzz");
     }
 
     @Test
-    public void should_return_whizz_when_it_could_be_divided_by_seven() {
+    public void should_return_whizz_when_it_call_7() {
         String result = fizzBuzzWhizz.compute(7);
         assert result.equals("Whizz");
     }
 
     @Test
-    public void should_return_number_when_it_could_not_be_divided_by_three_or_five_or_seven() {
+    public void should_return_number_when_it_call_8() {
         String result = fizzBuzzWhizz.compute(8);
         assert result.equals("8");
+    }
+
+    @Test
+    public void should_return_fizzbuzz_when_it_call_15() {
+        String result = fizzBuzzWhizz.compute(15);
+        assert result.equals("FizzBuzz");
+    }
+
+    @Test
+    public void should_return_fizzwhizz_when_it_call_21() {
+        String result = fizzBuzzWhizz.compute(21);
+        assert result.equals("FizzWhizz");
+    }
+
+    @Test
+    public void should_return_buzzwhizz_when_it_call_35() {
+        String result = fizzBuzzWhizz.compute(35);
+        assert result.equals("BuzzWhizz");
+    }
+
+    @Test
+    public void should_return_fizzbuzzwhizz_when_it_call_35() {
+        String result = fizzBuzzWhizz.compute(105);
+        assert result.equals("FizzBuzzWhizz");
     }
 }
