@@ -53,8 +53,14 @@ public class FizzBuzzTest {
     }
 
     @Test
-    public void should_return_fizzbuzzwhizz_when_it_call_35() {
+    public void should_return_fizzbuzzwhizz_when_it_call_105() {
         String result = fizzBuzzWhizz.compute(105);
         assert result.equals("FizzBuzzWhizz");
+    }
+
+    @Test
+    public void should_return_fizz_when_it_call_13() {
+        String result = fizzBuzzWhizz.compute(13);
+        assert result.equals("Fizz");
     }
 }

@@ -15,16 +15,23 @@ public class FizzBuzzWhizz {
         if (number % fizzDivider == 0) {
             result += FIZZ;
         }
+
         if (number % buzzDivider == 0) {
             result += BUZZ;
         }
+
         if (number % whizzDivider == 0) {
             result += WHIZZ;
         }
+
         if (EMPTY_STRING.equals(result)) {
+            String numStr = String.valueOf(number);
+            if (numStr.contains("3")) {
+                return FIZZ;
+            }
             return String.valueOf(number);
         }
+
         return result;
     }
 }
-gst
