@@ -27,4 +27,10 @@ public class FizzBuzzTest {
         String result = fizzBuzzWhizz.compute(7);
         assert result.equals("Whizz");
     }
+
+    @Test
+    public void should_return_number_when_it_could_not_be_divided_by_three_or_five_or_seven() {
+        String result = fizzBuzzWhizz.compute(8);
+        assert result.equals("8");
+    }
 }
