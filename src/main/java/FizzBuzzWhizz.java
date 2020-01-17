@@ -17,13 +17,21 @@ public class FizzBuzzWhizz {
 
         String numStr = String.valueOf(number);
 
-        // rule 4
-        if (numStr.contains(THREE)) {
+
+        // rule 6
+        if (numStr.contains(FIVE)) {
+            computeRule2AndRule3Without3Dividor(number);
+        }
+
+        // rule 4 and rule 5
+        else if (numStr.contains(THREE)) {
             return FIZZ;
         }
 
-        // rule 2 and rule 3
-        computeRule2AndRule3(number);
+        else {
+            // rule 2 and rule 3
+            computeRule2AndRule3(number);
+        }
 
         // rule 1
         if (EMPTY_STRING.equals(result)) {
@@ -31,6 +39,16 @@ public class FizzBuzzWhizz {
         }
 
         return result;
+    }
+
+    private void computeRule2AndRule3Without3Dividor(int number) {
+        if (number % buzzDivider == 0) {
+            result += BUZZ;
+        }
+
+        if (number % whizzDivider == 0) {
+            result += WHIZZ;
+        }
     }
 
     private void computeRule2AndRule3(int number) {

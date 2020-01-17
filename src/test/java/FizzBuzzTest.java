@@ -37,7 +37,7 @@ public class FizzBuzzTest {
     @Test
     public void should_return_fizzbuzz_when_it_call_15() {
         String result = fizzBuzzWhizz.compute(15);
-        assert result.equals("FizzBuzz");
+        assert result.equals("Buzz");
     }
 
     @Test
@@ -49,13 +49,13 @@ public class FizzBuzzTest {
     @Test
     public void should_return_buzzwhizz_when_it_call_35() {
         String result = fizzBuzzWhizz.compute(35);
-        assert result.equals("Fizz");
+        assert result.equals("BuzzWhizz");
     }
 
     @Test
     public void should_return_fizzbuzzwhizz_when_it_call_105() {
         String result = fizzBuzzWhizz.compute(105);
-        assert result.equals("FizzBuzzWhizz");
+        assert result.equals("BuzzWhizz");
     }
 
     @Test
