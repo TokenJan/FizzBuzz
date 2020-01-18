@@ -11,6 +11,10 @@ public class FizzBuzzWhizz {
     private static String FIVE = "5";
     private static String SEVEN = "7";
     private String result = EMPTY_STRING;
+    private boolean skipFizz = false;
+    private boolean skipBuzz = false;
+    private boolean skip6 = false;
+    private boolean skip4And5 = false;
 
     public String compute(int number) {
 
@@ -18,31 +22,23 @@ public class FizzBuzzWhizz {
 
         // rule 7
         if (numStr.contains(SEVEN)) {
-            // rule 4 and rule 5
-            if (numStr.contains(THREE)) {
-                return FIZZ;
-            }
-
-            else {
-                // rule 2 and rule 3
-                computeRule2AndRule3Without5Dividor(number);
-            }
+            skipBuzz = true;
+            skip6 = true;
         }
 
         // rule 6
-        else if (numStr.contains(FIVE)) {
-            computeRule2AndRule3Without3Dividor(number);
+        if (numStr.contains(FIVE) && !skip6) {
+            skipFizz = true;
+            skip4And5 = true;
         }
 
         // rule 4 and rule 5
-        else if (numStr.contains(THREE)) {
+        if (numStr.contains(THREE) && !skip4And5) {
             return FIZZ;
         }
 
-        else {
-            // rule 2 and rule 3
-            computeRule2AndRule3(number);
-        }
+        // rule 2 and rule 3
+        computeBasicFizzBuzzRule(number, skipFizz, skipBuzz);
 
         // rule 1
         if (EMPTY_STRING.equals(result)) {
@@ -52,32 +48,12 @@ public class FizzBuzzWhizz {
         return result;
     }
 
-    private void computeRule2AndRule3Without3Dividor(int number) {
-        if (number % buzzDivider == 0) {
-            result += BUZZ;
-        }
-
-        if (number % whizzDivider == 0) {
-            result += WHIZZ;
-        }
-    }
-
-    private void computeRule2AndRule3Without5Dividor(int number) {
-        if (number % fizzDivider == 0) {
+    private void computeBasicFizzBuzzRule(int number, boolean skipFizz, boolean skipBuzz) {
+        if (number % fizzDivider == 0 && !skipFizz) {
             result += FIZZ;
         }
 
-        if (number % whizzDivider == 0) {
-            result += WHIZZ;
-        }
-    }
-
-    private void computeRule2AndRule3(int number) {
-        if (number % fizzDivider == 0) {
-            result += FIZZ;
-        }
-
-        if (number % buzzDivider == 0) {
+        if (number % buzzDivider == 0 && !skipBuzz) {
             result += BUZZ;
         }
 
