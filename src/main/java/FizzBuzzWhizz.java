@@ -3,62 +3,61 @@ public class FizzBuzzWhizz {
     private static String FIZZ = "Fizz";
     private static String BUZZ = "Buzz";
     private static String WHIZZ = "Whizz";
-    private static String EMPTY_STRING = "";
-    private static int fizzDivider = 3;
-    private static int buzzDivider = 5;
-    private static int whizzDivider = 7;
-    private static String THREE = "3";
-    private static String FIVE = "5";
-    private static String SEVEN = "7";
-    private String result = EMPTY_STRING;
-    private boolean skipFizz = false;
-    private boolean skipBuzz = false;
-    private boolean skip6 = false;
-    private boolean skip4And5 = false;
 
     public String compute(int number) {
-
-        String numStr = String.valueOf(number);
+        String result = "";
+        boolean skipFizz = false;
+        boolean skipBuzz = false;
+        boolean skip6 = false;
+        boolean skip4And5 = false;
+        boolean containThree = contains(number, "3");
+        boolean containFive = contains(number, "5");
+        boolean containSeven = contains(number, "7");
 
         // rule 7
-        if (numStr.contains(SEVEN)) {
+        if (containSeven) {
             skipBuzz = true;
             skip6 = true;
         }
 
         // rule 6
-        if (numStr.contains(FIVE) && !skip6) {
+        if (containFive && !skip6) {
             skipFizz = true;
             skip4And5 = true;
         }
 
         // rule 4 and rule 5
-        if (numStr.contains(THREE) && !skip4And5) {
+        if (containThree && !skip4And5) {
             return FIZZ;
         }
 
         // rule 2 and rule 3
-        computeBasicFizzBuzzRule(number, skipFizz, skipBuzz);
+        result = computeBasicFizzBuzzRule(number, skipFizz, skipBuzz);
 
-        // rule 1
-        if (EMPTY_STRING.equals(result)) {
-            return String.valueOf(number);
-        }
-
-        return result;
+        return result.isEmpty() ? String.valueOf(number) : result;
     }
 
-    private void computeBasicFizzBuzzRule(int number, boolean skipFizz, boolean skipBuzz) {
-        if (number % fizzDivider == 0 && !skipFizz) {
+    private boolean contains(int number, String target) {
+        return String.valueOf(number).contains(target);
+    }
+
+    private String computeBasicFizzBuzzRule(int number, boolean skipFizz, boolean skipBuzz) {
+        String result = "";
+        boolean isDivisible3 = number % 3 == 0;
+        boolean isDivisible5 = number % 5 == 0;
+        boolean isDivisible7 = number % 7 == 0;
+
+        if (isDivisible3 && !skipFizz) {
             result += FIZZ;
         }
 
-        if (number % buzzDivider == 0 && !skipBuzz) {
+        if (isDivisible5 && !skipBuzz) {
             result += BUZZ;
         }
 
-        if (number % whizzDivider == 0) {
+        if (isDivisible7) {
             result += WHIZZ;
         }
+        return result;
     }
 }
