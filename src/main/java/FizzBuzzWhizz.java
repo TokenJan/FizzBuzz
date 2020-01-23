@@ -1,3 +1,6 @@
+/**
+ * @author jiahuan.yang
+ */
 public class FizzBuzzWhizz {
 
     private static String FIZZ = "Fizz";
