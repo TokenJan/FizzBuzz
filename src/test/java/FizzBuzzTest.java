@@ -3,81 +3,65 @@ import org.junit.Test;
 
 public class FizzBuzzTest {
 
-    private FizzBuzzWhizz fizzBuzzWhizz;
+    private FizzBuzz fizzBuzz;
 
     @Before
-    public void setup() {
-        fizzBuzzWhizz = new FizzBuzzWhizz();
+    public void setUp() {
+        fizzBuzz = new FizzBuzz();
     }
 
     @Test
-    public void should_return_fizz_when_it_call_3() {
-        String result = fizzBuzzWhizz.compute(3);
-        assert result.equals("Fizz");
+    public void should_return_Fizz_given_3() {
+        assert "Fizz".equals(fizzBuzz.call(3));
     }
 
     @Test
-    public void should_return_buzz_when_it_call_5() {
-        String result = fizzBuzzWhizz.compute(5);
-        assert result.equals("Buzz");
+    public void should_return_Buzz_given_5() {
+        assert "Buzz".equals(fizzBuzz.call(5));
     }
 
     @Test
-    public void should_return_whizz_when_it_call_7() {
-        String result = fizzBuzzWhizz.compute(7);
-        assert result.equals("Whizz");
+    public void should_return_Whizz_given_7() {
+        assert "Whizz".equals(fizzBuzz.call(7));
     }
 
     @Test
-    public void should_return_number_when_it_call_8() {
-        String result = fizzBuzzWhizz.compute(8);
-        assert result.equals("8");
+    public void should_return_Fizz_given_13() {
+        assert "Fizz".equals(fizzBuzz.call(13));
     }
 
     @Test
-    public void should_return_fizzbuzz_when_it_call_15() {
-        String result = fizzBuzzWhizz.compute(15);
-        assert result.equals("Buzz");
+    public void should_return_Buzz_given_15() {
+        assert "Buzz".equals(fizzBuzz.call(15));
     }
 
     @Test
-    public void should_return_fizzwhizz_when_it_call_21() {
-        String result = fizzBuzzWhizz.compute(21);
-        assert result.equals("FizzWhizz");
+    public void should_return_FizzWhizz_given_21() {
+        assert "FizzWhizz".equals(fizzBuzz.call(21));
     }
 
     @Test
-    public void should_return_buzzwhizz_when_it_call_35() {
-        String result = fizzBuzzWhizz.compute(35);
-        assert result.equals("BuzzWhizz");
+    public void should_return_Fizz_given_30() {
+        assert "Fizz".equals(fizzBuzz.call(30));
     }
 
     @Test
-    public void should_return_fizzbuzzwhizz_when_it_call_105() {
-        String result = fizzBuzzWhizz.compute(105);
-        assert result.equals("BuzzWhizz");
+    public void should_return_BuzzWhizz_given_35() {
+        assert "BuzzWhizz".equals(fizzBuzz.call(35));
     }
 
     @Test
-    public void should_return_fizz_when_it_call_13() {
-        String result = fizzBuzzWhizz.compute(13);
-        assert result.equals("Fizz");
-    }
-    @Test
-    public void should_return_fizz_when_it_call_30() {
-        String result = fizzBuzzWhizz.compute(30);
-        assert result.equals("Fizz");
+    public void should_return_Fizz_given_73() {
+        assert "Fizz".equals(fizzBuzz.call(73));
     }
 
     @Test
-    public void should_return_fizz_when_it_call_75() {
-        String result = fizzBuzzWhizz.compute(75);
-        assert result.equals("Fizz");
+    public void should_return_Fizz_given_75() {
+        assert "Fizz".equals(fizzBuzz.call(75));
     }
 
     @Test
-    public void should_return_fizz_when_it_call_73() {
-        String result = fizzBuzzWhizz.compute(73);
-        assert result.equals("Fizz");
+    public void should_return_BuzzWhizz_given_105() {
+        assert "BuzzWhizz".equals(fizzBuzz.call(105));
     }
 }
